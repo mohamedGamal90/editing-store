@@ -1,0 +1,12 @@
+<app-nav-bar></app-nav-bar>
+<div class="main-container">
+  <router-outlet></router-outlet>
+  <div class="container">
+    <div
+      *ngFor="let item of itemArray; let i = index"
+      class="item-container"
+    >
+    <app-item [Index]="i" [item]="item" ></app-item>
+  </div>
+  </div>
+</div>

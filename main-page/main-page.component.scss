@@ -1,0 +1,32 @@
+@import "../shared/shared-variables.scss";
+div {
+  @include div();
+}
+.main-container {
+  position: relative;
+  top: $navBar-div-height;
+  background-color: beige;
+  width: 100%;
+  min-height: calc(100vh - $navBar-div-height);
+}
+.container {
+  background-color: grey;
+  width: calc(100vw - 100px);
+  min-height: calc(100vh - $navBar-div-height);
+  left: 10px;
+  transform: translateX(45px);
+  padding: 20px;
+  display: grid;
+  justify-content: center;
+  grid: {
+    template-columns: repeat(auto-fill, $item-container-width);
+    template-rows: $item-container-height;
+    gap: $big_font;
+  }
+}
+.item-container {
+  background-color: white;
+  width: $item-container-width;
+  height: $item-container-height;
+  border-radius: 0.7rem;
+}

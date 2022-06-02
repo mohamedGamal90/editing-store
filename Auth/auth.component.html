@@ -1,0 +1,17 @@
+<div class="auth-mainContainer">
+  <div class="auth-formContainer">
+    <form [formGroup]="LoginForm" (ngSubmit)="loginSubmit()">
+      <input
+      type="text"
+      placeholder="E-mail"
+      formControlName="email"
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+      /><br />
+      <button class="auth-LoginBTN" type="submit">Login</button>
+    </form>
+  </div>
+</div>

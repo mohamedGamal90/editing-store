@@ -1,0 +1,27 @@
+<div class="item-container-image">
+  <img [src]="item.imageUrl" [alt]="item.header" />
+  <button class="item-DeleteBtn" (click)="onDelete(Index)">
+    <span class="material-symbols-outlined"> delete </span>
+  </button>
+</div>
+<div
+  class="item-container-content"
+  [ngClass]="{ 'item-container-content-extend': showMore }"
+>
+  <button class="arrowSpanBTN" type="button" (click)="showTrigger()">
+    <span class="material-symbols-outlined">
+      {{ message }}
+    </span>
+  </button>
+  <div class="item-content">
+    <h2>{{ item.header | shorteningWords }}</h2>
+    <p>Price: {{ item.price }} EGP</p>
+    <p>Sizes: {{ item.size }}</p>
+    <div *ngIf="showMore">
+      <p>Brand: {{ item.brand }}</p>
+      <p>Category: {{ item.category }}</p>
+    </div>
+    <P>#{{ item.itemID }}</P>
+    <button class="item-editBtn" (click)="onEdit(Index)">Edit</button>
+  </div>
+</div>

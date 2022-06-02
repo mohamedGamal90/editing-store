@@ -1,0 +1,28 @@
+@import "../shared-variables.scss";
+
+.message-container {
+  padding: 10px;
+  @include div();
+  position: fixed;
+  width: 300px;
+  height: auto;
+  border-radius: 0.7rem;
+  left: calc(100% - 330px);
+  z-index: 101;
+}
+.error {
+  border: 3px $danger-color solid;
+  background-color: lighten($danger-color, 15%);
+}
+.message {
+  border: 3px lightgrey solid;
+  background-color: white;
+}
+.closeBTN {
+  position: relative;
+  padding: 5px;
+  bottom: 5px;
+  left: calc(100% - 25px);
+  background-color: inherit;
+  border: none;
+}

@@ -1,0 +1,51 @@
+@import "../shared/shared-variables.scss";
+div {
+  @include div();
+}
+.navbardiv {
+  position: fixed;
+  z-index: 100;
+  background-color: wheat;
+  width: 100%;
+  height: $navBar-div-height;
+
+  .navbardiv-content {
+    position: relative;
+    left: calc(100% - 1080px);
+
+    .navBarBTN {
+      height: 50px;
+      width: 150px;
+      margin: 10px;
+      font-size: $big_font;
+
+      .navSpan {
+        @include span(3px, 3px);
+      }
+    }
+    .searchSpan {
+      @include span(2px, 10px);
+    }
+  }
+}
+
+button {
+  @include button(3px, pointer, relative);
+}
+button:hover {
+  transition: 1s;
+  background-color: white;
+}
+input {
+  @include button(3px, text, relative);
+  left: 20px;
+  bottom: 3px;
+  height: 40px;
+  width: 300px;
+  padding-left: 5px;
+  font-size: $big_font;
+}
+
+// .material-symbols-outlined {
+//   font-variation-settings: "FILL" 1, "wght" 700, "GRAD" -25, "opsz" 48;
+// }

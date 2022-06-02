@@ -1,0 +1,11 @@
+<link
+  rel="stylesheet"
+  href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
+/>
+<div *ngIf="message">
+  <app-message-screen [errorMessage]="message"></app-message-screen>
+</div>
+<div *ngIf="loading">
+  <app-loading-screen></app-loading-screen>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,21 @@
+<div class="navbardiv">
+  <div class="navbardiv-content">
+    <input type="text" placeholder="Search" (change)="Search()" #search />
+    <span class="material-symbols-outlined searchSpan" (click)="cancelSearch()">
+      cancel
+    </span>
+    <button class="navBarBTN" routerLink="/main/add">
+      <span class="material-symbols-outlined navSpan"> add_circle </span>Add
+    </button>
+    <button class="navBarBTN" (click)="saveChanges()">
+      <span class="material-symbols-outlined navSpan"> cloudy </span>Save
+    </button>
+    <button class="navBarBTN" (click)="discardChanges()">
+      <span class="material-symbols-outlined navSpan"> cancel </span>Discard
+    </button>
+    <button class="navBarBTN" (click)="Logout()">
+      <span class="material-symbols-outlined navSpan"> logout </span>
+      Logout
+    </button>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+@import "../../shared/shared-variables.scss";
+
+$item-content: 100px;
+
+div {
+  @include div();
+}
+
+img {
+  @include itemImg();
+  width: $item-container-width;
+}
+.item-container-image {
+  height: 300px;
+}
+.item-container-content {
+  background-color: rgb(241, 236, 188);
+  padding-left: 10px;
+  padding-top: 4px;
+  height: $item-content;
+
+  &-extend {
+    height: $item-content + 40px;
+    bottom: 38px;
+  }
+}
+
+.item-content {
+  bottom: 24px;
+}
+
+button {
+  @include button(2px, pointer, relative);
+}
+.item-editBtn {
+  left: 210px;
+  bottom: 30px;
+  padding: 0.5rem;
+}
+.arrowSpanBTN {
+  background-color: inherit;
+  @include span(28px, -232px);
+  border: none;
+  z-index: 90;
+}
+.item-DeleteBtn {
+  background-color: $danger-color;
+  padding: 0.2rem;
+  bottom: 300px;
+  left: 232px;
+}

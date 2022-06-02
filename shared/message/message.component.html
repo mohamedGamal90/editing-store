@@ -1,0 +1,10 @@
+<div
+  class="message-container"
+  [ngClass]="{ message: mType, error: !mType }"
+  [@animate]="animationState"
+>
+  <button class="closeBTN" (click)="onClose()">
+    <span class="material-symbols-outlined"> close </span>
+  </button>
+  <p>{{ errorMessage }}</p>
+</div>

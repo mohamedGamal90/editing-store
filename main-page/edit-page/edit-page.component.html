@@ -1,0 +1,64 @@
+<div class="darkBG" (click)="onCancel()"></div>
+<div class="edit-form">
+  <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+    <label for="Header">Header:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+    <input type="text" id="header" formControlName="header" />
+    <br />
+    <label for="ImgURL">ImgUrl: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+    <input type="text" id="imageUrl" formControlName="imageUrl" #imgUrl /><br />
+    <div *ngIf="imgUrl.value" class="image-container">
+      <!-- <span class="material-symbols-outlined"
+      > arrow_back_ios_new </span> -->
+      <img [src]="imgUrl.value" />
+      <!-- <span class="material-symbols-outlined rightArrow-span"
+      >arrow_forward_ios</span> -->
+    </div>
+    <label for="brand"
+      >Brand: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </label>
+    <input type="text" id="brand" formControlName="brand" /><br />
+    <label for="category">Category: &nbsp; &nbsp;</label>
+    <input type="text" id="category" formControlName="category" /><br />
+    <label class="desLabel" for="description">description: </label>
+    <textarea
+      type="text"
+      id="description"
+      rows="6"
+      formControlName="description"
+    ></textarea
+    ><br />
+    <label for="price">price: </label>
+    <input
+      class="priceInput"
+      type="number"
+      id="price"
+      formControlName="price"
+    /><br />
+    <label for="size">Sizes: </label><br />
+    <!-- size part -->
+    <div class="checkBox-Container">
+      <div *ngFor="let size of Sizes">
+        <label class="checkBoxLabel">
+          <input
+            (change)="onCheckChange($event)"
+            class="checkBoxLabel"
+            type="checkbox"
+            [checked]="size.select"
+            [value]="size.name"
+          />
+          {{ size.name }} </label
+        ><br />
+      </div>
+    </div>
+    <!-- size part -->
+    <button
+      type="submit"
+      class="submitBTN"
+      [disabled]="itemForm.invalid || !(sizes.length>=1)"
+    >
+      {{ message }}
+    </button>
+    &nbsp;
+    <button type="cancel" class="cancelBTN" (click)="onCancel()">cancel</button>
+  </form>
+</div>

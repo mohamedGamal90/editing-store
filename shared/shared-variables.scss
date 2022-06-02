@@ -1,0 +1,50 @@
+$item-container-height: 400px;
+$item-container-width: 270px;
+$navBar-div-height: 70px;
+$big_font: 1.5rem;
+$danger-color: rgb(195, 63, 63);
+$success-color: rgb(52, 173, 54);
+
+@mixin div() {
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@mixin button($borderSize, $cursorType, $position) {
+  border: $borderSize lightgrey solid;
+  cursor: $cursorType;
+  position: $position;
+  border-radius: 0.7rem;
+}
+
+@mixin darkBackground($indexNumber) {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  opacity: 60%;
+  z-index: $indexNumber;
+}
+
+@mixin itemImg {
+  height: 100%;
+  object-fit: contain;
+}
+
+@mixin centerDiv($position, $width, $height, $padding) {
+  position: $position;
+  width: $width;
+  height: $height;
+  padding: $padding;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+}
+
+@mixin span($top, $right) {
+  position: relative;
+  top: $top;
+  right: $right;
+}

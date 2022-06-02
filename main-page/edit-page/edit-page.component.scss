@@ -1,0 +1,88 @@
+@import "../../shared/shared-variables.scss";
+
+$label-width: 400px;
+
+* {
+  font-size: 1.22rem;
+}
+div {
+  @include div();
+}
+.darkBG {
+  @include darkBackground(99);
+}
+.edit-form {
+  @include centerDiv(fixed,1040px,75%,10px);
+  border-radius: 1rem;
+  z-index: 100;
+}
+.image-container {
+  border: 1px solid black;
+  position: absolute;
+  top: 10px;
+  left: 525px;
+  height: calc(100% - 20px);
+  width: 500px;
+}
+img {
+  @include itemImg();
+  width: 500px;
+}
+textarea,
+input {
+  width: $label-width;
+  border-radius: 0.7rem;
+  border: 1px solid grey;
+  margin-bottom: 10px;
+  padding-left: 5px;
+}
+input {
+  height: 25px;
+}
+.desLabel {
+  position: relative;
+  bottom: 130px;
+}
+.priceInput {
+  width: 55px;
+  font-size: 1rem;
+}
+/* checkbox part */
+.checkBox-Container {
+  width: 210px;
+  height: 120px;
+  display: grid;
+  grid: {
+    template-columns: repeat(auto-fill, 100px);
+    template-rows: repeat(auto-fill, 35px);
+  }
+
+  .checkBoxLabel {
+    width: 25px;
+  }
+}
+/* checkbox part */
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid $danger-color;
+}
+.submitBTN {
+  left: 300px;
+  background-color: $success-color;
+}
+.cancelBTN {
+  left: 415px;
+  background-color: $danger-color;
+}
+button {
+  @include button(3px, pointer, absolute);
+  margin-bottom: 10px;
+  bottom: 0px;
+  padding: 20px 18px;
+  width: 100px;
+  color: white;
+}
+button:disabled {
+  background-color: grey;
+}
